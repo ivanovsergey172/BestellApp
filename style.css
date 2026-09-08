@@ -1,3 +1,21 @@
+/* ----- fonts ----- */
+
+@font-face {
+    font-family: 'Palanquin Dark Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Palanquin Dark Regular'), url('PalanquinDark-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Palanquin Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Palanquin Regular'), url('Palanquin-Regular.woff') format('woff');
+}
+
+/* ----- base html properties ----- */
+
 html {
     max-width: 1920px;
 }
@@ -6,6 +24,8 @@ body {
     border: 0;
     margin: 0;
 }
+
+/* ----- header ----- */
 
 header {
     height: 128px;
@@ -21,7 +41,9 @@ header {
     padding-left: 120px;
 }
 
-.restaurant_name {
+/* ----- main ----- */
+
+.restaurant_hero {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,4 +62,77 @@ header {
     border-radius: 50%;
     transform: translateY(-150px);
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.name_and_tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-120px);
+}
+
+.name_and_tagline p {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #363534;
+}
+
+.name_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 26px;
+}
+
+.restaurant_name {
+    font-family: 'Palanquin Dark Regular', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #E76C1F;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.restaurant_name span {
+    color: #363534;
+}
+
+.rating_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FACAAC;
+    border-radius: 4px;
+    padding: 4px 5px;
+    gap: 8px;
+    color: #363534;
+}
+
+.rating_container h5 {
+    font-size: 26px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ratings h6 {
+    font-family: 'Palanquin Dark Regular', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #363534;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.ratings span {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #726D6D;
 }
