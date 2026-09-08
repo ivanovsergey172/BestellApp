@@ -38,4 +38,6 @@ header {
     width: 200px;
     border: 13px solid #FDEADC;
     border-radius: 50%;
+    transform: translateY(-150px);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
 }
