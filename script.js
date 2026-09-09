@@ -4,11 +4,11 @@ let burgerSection = document.getElementById("burger_section");
 
 function renderBurgers() {
     
-    burger_section.innerHTML = ""; 
+    burgerSection.innerHTML = ""; 
 
     for (let i = 0; i < burgers.length; i++) {
 
-        burger_section.innerHTML += `
+        burgerSection.innerHTML += `
             <div class="burger">
                 <div class="burger_entry">
 
