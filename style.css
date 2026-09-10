@@ -143,6 +143,7 @@ header {
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 32px;
+    transform: translateY(-70px);
 }
 
 .orange_rectangle {
@@ -171,6 +172,7 @@ header {
 .burger {
     padding-left: 120px;
     width: 720px;
+    transform: translateY(-50px);
 }
 
 .burger_entry {
@@ -220,6 +222,7 @@ header {
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 32px;
+    transform: translateY(-30px);
 }
 
 .pizza {
@@ -274,4 +277,5 @@ header {
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 32px;
+    transform: translateY(40px);
 }
