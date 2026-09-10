@@ -137,6 +137,37 @@ header {
     color: #726D6D;
 }
 
+.burger_headline {
+    height: 91px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 32px;
+}
+
+.orange_rectangle {
+    width: auto;
+    height: 60px;
+    background-color: #E76C1F;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.headline_text {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    padding-left: 283px;
+}
+
+.headline_text span {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+
 .burger {
     padding-left: 120px;
     width: 720px;
@@ -183,6 +214,14 @@ header {
     width: 84px;
 }
 
+.pizza_headline {
+    height: 91px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 32px;
+}
+
 .pizza {
     padding-left: 120px;
     width: 720px;
@@ -227,4 +266,12 @@ header {
     justify-content: center;
     gap: 48px;
     width: 84px;
+}
+
+.salad_headline {
+    height: 91px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 32px;
 }
