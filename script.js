@@ -15,10 +15,21 @@ function renderBurgers() {
                     <img src="${burgers[i].image_url}" alt="${burgers[i].name}">
 
                     <div class="burger_info">
-                        <h2>${burgers[i].name}</h2>
-                        <h2>${burgers[i].price.toFixed(2)} €</h2>
 
-                        <span>${burgers[i].description}</span>
+                        <div class="burger_name_desc">
+
+                            <h2>${burgers[i].name}</h2>
+                            <span>${burgers[i].description}</span>
+
+                        </div>
+                        
+                        <div class="burger_price_button">
+
+                            <h2>${burgers[i].price.toFixed(2)} €</h2>
+                            <button>Add</button>
+
+                        </div>
+                        
                     </div>
 
                 </div>
