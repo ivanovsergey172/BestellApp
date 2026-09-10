@@ -160,7 +160,15 @@ header {
     font-family: 'Palanquin Regular', sans-serif;
     font-weight: 700;
     font-size: 40px;
-    padding-left: 283px;
+    padding-left: 186px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.headline_text img {
+    height: 140px;
+    transform: translateY(-8px);
 }
 
 .headline_text span {
