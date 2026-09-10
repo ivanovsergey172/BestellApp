@@ -182,3 +182,49 @@ header {
     gap: 48px;
     width: 84px;
 }
+
+.pizza {
+    padding-left: 120px;
+    width: 720px;
+}
+
+.pizza_entry {
+    display: flex;
+    background-color: #FDEADC;
+    gap: 16px;
+    padding: 10px 10px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.pizza_entry img {
+    width: 210px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.pizza_info {
+    display: flex;
+    width: 470px;
+    justify-content: space-between;
+}
+
+.pizza_info h2 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.pizza_name_desc {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pizza_price_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+    width: 84px;
+}
