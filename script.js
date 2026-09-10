@@ -40,6 +40,7 @@ function renderBurgers() {
 
 renderBurgers();
 
+
 let pizzaSection = document.getElementById("pizza_section");
 
 
@@ -80,3 +81,45 @@ function renderPizza() {
 }
 
 renderPizza();
+
+
+let saladSection = document.getElementById("salad_section");
+
+
+function renderSalads() {
+    
+    saladSection.innerHTML = ""; 
+
+    for (let i = 0; i < salads.length; i++) {
+
+        saladSection.innerHTML += `
+            <div class="salad">
+                <div class="salad_entry">
+
+                    <img src="${salads[i].image_url}" alt="${salads[i].name}">
+
+                    <div class="salad_info">
+
+                        <div class="salad_name_desc">
+
+                            <h2>${salads[i].name}</h2>
+                            <span>${salads[i].description}</span>
+
+                        </div>
+                        
+                        <div class="salad_price_button">
+
+                            <h2>${salads[i].price.toFixed(2)} €</h2>
+                            <button>Add</button>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        `;
+    }
+}
+
+renderSalads();
