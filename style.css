@@ -4,14 +4,14 @@
     font-family: 'Palanquin Dark Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Palanquin Dark Regular'), url('PalanquinDark-Regular.woff') format('woff');
+    src: local('Palanquin Dark Regular'), url('./fonts/PalanquinDark-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Palanquin Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Palanquin Regular'), url('Palanquin-Regular.woff') format('woff');
+    src: local('Palanquin Regular'), url('./fonts/Palanquin-Regular.woff') format('woff');
 }
 
 /* ----- base html properties ----- */
@@ -137,6 +137,8 @@ header {
     color: #726D6D;
 }
 
+/* ----- burger headline ----- */
+
 .burger_headline {
     height: 91px;
     display: flex;
@@ -145,6 +147,8 @@ header {
     padding-bottom: 32px;
     transform: translateY(-70px);
 }
+
+/* ----- headline (all) ----- */
 
 .orange_rectangle {
     width: auto;
@@ -176,6 +180,8 @@ header {
     font-weight: 400;
     font-size: 40px;
 }
+
+/* ----- burger ----- */
 
 .burger {
     padding-left: 120px;
@@ -217,13 +223,51 @@ header {
     width: 350px;
 }
 
+.burger_name_desc h2 {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #363534;
+    line-height: 100%;
+}
+
+.burger_name_desc span {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #363534;
+}
+
 .burger_price_button {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     gap: 48px;
-    width: 84px;
+    width: 115px;
 }
+
+.burger_price_button h2 {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #363534;
+    line-height: 120%;
+}
+
+.burger_price_button button {
+    padding: 0px 8px;
+    background-color: #FFFFFF;
+    color: #363534;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* ----- pizza headline ----- */
 
 .pizza_headline {
     height: 91px;
@@ -233,6 +277,8 @@ header {
     padding-bottom: 32px;
     transform: translateY(-30px);
 }
+
+/* ----- pizza ----- */
 
 .pizza {
     padding-left: 120px;
@@ -273,13 +319,51 @@ header {
     width: 350px;
 }
 
+.pizza_name_desc h2 {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #363534;
+    line-height: 100%;
+}
+
+.pizza_name_desc span {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #363534;
+}
+
 .pizza_price_button {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     gap: 48px;
-    width: 84px;
+    width: 115px;
 }
+
+.pizza_price_button h2 {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #363534;
+    line-height: 120%;
+}
+
+.pizza_price_button button {
+    padding: 0px 8px;
+    background-color: #FFFFFF;
+    color: #363534;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* ----- salad headline ----- */
 
 .salad_headline {
     height: 91px;
@@ -289,6 +373,8 @@ header {
     padding-bottom: 32px;
     transform: translateY(40px);
 }
+
+/* ----- salad ----- */
 
 .salad {
     padding-left: 120px;
@@ -330,10 +416,48 @@ header {
     width: 350px;
 }
 
+.salad_name_desc h2 {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #363534;
+    line-height: 100%;
+}
+
+.salad_name_desc span {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #363534;
+}
+
 .salad_price_button {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     gap: 48px;
-    width: 84px;
+    width: 115px;
 }
+
+.salad_price_button h2 {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #363534;
+    line-height: 120%;
+}
+
+.salad_price_button button {
+    padding: 0px 8px;
+    background-color: #FFFFFF;
+    color: #363534;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* ----- footer ----- */

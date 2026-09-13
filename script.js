@@ -26,7 +26,7 @@ function renderBurgers() {
                         <div class="burger_price_button">
 
                             <h2>${burgers[i].price.toFixed(2)} €</h2>
-                            <button>Add</button>
+                            <button>Add to basket</button>
 
                         </div>
                         
@@ -68,7 +68,7 @@ function renderPizza() {
                         <div class="pizza_price_button">
 
                             <h2>${pizzas[i].price.toFixed(2)} €</h2>
-                            <button>Add</button>
+                            <button>Add to basket</button>
 
                         </div>
                         
@@ -110,7 +110,7 @@ function renderSalads() {
                         <div class="salad_price_button">
 
                             <h2>${salads[i].price.toFixed(2)} €</h2>
-                            <button>Add</button>
+                            <button>Add to basket</button>
 
                         </div>
                         
