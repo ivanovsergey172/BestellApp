@@ -461,3 +461,32 @@ header {
 }
 
 /* ----- footer ----- */
+
+footer {
+    height: 128px;
+    background-color: #E76C1F;
+    transform: translateY(140px);
+    color: #FFFFFF;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+footer img {
+    height: 24px;
+    width: 24px;
+}
+
+.footer_container {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    transform: translateY(65px);
+}
+
+.copyright_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
