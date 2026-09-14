@@ -28,7 +28,7 @@ function renderBurgers() {
                         <div class="burger_price_button">
 
                             <h2>${burgers[i].price.toFixed(2)} €</h2>
-                            <button onclick="addToBasket(burgers, ${i})">Add to basket</button>
+                            <button onclick="addToBasket(burgers, ${i}, this)">Add to basket</button>
 
                         </div>
                         
@@ -70,7 +70,7 @@ function renderPizza() {
                         <div class="pizza_price_button">
 
                             <h2>${pizzas[i].price.toFixed(2)} €</h2>
-                            <button onclick="addToBasket(pizzas, ${i})">Add to basket</button>
+                            <button onclick="addToBasket(pizzas, ${i}, this)">Add to basket</button>
 
                         </div>
                         
@@ -112,7 +112,7 @@ function renderSalads() {
                         <div class="salad_price_button">
 
                             <h2>${salads[i].price.toFixed(2)} €</h2>
-                            <button onclick="addToBasket(salads, ${i})">Add to basket</button>
+                            <button onclick="addToBasket(salads, ${i}, this)">Add to basket</button>
 
                         </div>
                         
@@ -126,7 +126,7 @@ function renderSalads() {
 
 renderSalads();
 
-function addToBasket(array, index) {
+function addToBasket(array, index, button) {
 
     let dish = array[index];
 
@@ -142,10 +142,10 @@ function addToBasket(array, index) {
         });
     }
 
+    button.innerText = `Added ${basket.find(item => item.name == dish.name).amount}`;
+
     renderBasket();
-    renderBurgers();
-    renderPizza();
-    renderSalads();
+
 }
 
 let basketItems = document.getElementById("basket_items");
