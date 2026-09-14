@@ -161,6 +161,27 @@ header {
     border-bottom-left-radius: 30px;
 }
 
+.basket_container {
+    width: 340px;
+    height: 676px;
+    margin-top: 59px;
+    margin-left: 31px;
+    gap: 36px;
+}
+
+.basket_headline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.basket_headline span {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #FDEADC;
+}
+
 /* ----- burger headline ----- */
 
 .burger_headline {

@@ -1,4 +1,6 @@
 
+let basket = [];
+
 let burgerSection = document.getElementById("burger_section");
 
 
@@ -26,7 +28,7 @@ function renderBurgers() {
                         <div class="burger_price_button">
 
                             <h2>${burgers[i].price.toFixed(2)} €</h2>
-                            <button>Add to basket</button>
+                            <button onclick="addToBasket(burgers, ${i})">Add to basket</button>
 
                         </div>
                         
@@ -68,7 +70,7 @@ function renderPizza() {
                         <div class="pizza_price_button">
 
                             <h2>${pizzas[i].price.toFixed(2)} €</h2>
-                            <button>Add to basket</button>
+                            <button onclick="addToBasket(pizzas, ${i})">Add to basket</button>
 
                         </div>
                         
@@ -110,7 +112,7 @@ function renderSalads() {
                         <div class="salad_price_button">
 
                             <h2>${salads[i].price.toFixed(2)} €</h2>
-                            <button>Add to basket</button>
+                            <button onclick="addToBasket(salads, ${i})">Add to basket</button>
 
                         </div>
                         
@@ -123,3 +125,46 @@ function renderSalads() {
 }
 
 renderSalads();
+
+function addToBasket(array, index) {
+
+    let dish = array[index];
+
+    let existingDish = basket.find(item => item.name == dish.name);
+
+    if (existingDish) {
+        existingDish.amount++;
+    } else {
+        basket.push({
+            name: dish.name,
+            price: dish.price,
+            amount: 1
+        });
+    }
+
+    renderBasket();
+    renderBurgers();
+    renderPizza();
+    renderSalads();
+}
+
+let basketItems = document.getElementById("basket_items");
+
+function renderBasket() {
+
+    basketItems.innerHTML = "";
+
+    for (let i = 0; i < basket.length; i++) {
+        
+        basketItems.innerHTML += `
+            <div class="basket_item">
+
+                <span>${basket[i].amount} x ${basket[i].name}</span>
+
+                <span>${(basket[i].price * basket[i].amount).toFixed(2)} €</span>
+
+            </div>
+        `;
+        
+    }
+}
