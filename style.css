@@ -137,6 +137,30 @@ header {
     color: #726D6D;
 }
 
+.menu_area {
+    display: flex;
+    
+}
+
+.food_area {
+    width: calc(100% - 435px);
+}
+
+/* ----- basket ----- */
+
+.basket_section {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-left: auto;
+    flex-shrink: 0;
+    width: 435px;
+    height: 794px;
+    background-color: #363534;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
 /* ----- burger headline ----- */
 
 .burger_headline {
@@ -151,7 +175,7 @@ header {
 /* ----- headline (all) ----- */
 
 .orange_rectangle {
-    width: auto;
+    width: 100vw;
     height: 60px;
     background-color: #E76C1F;
     color: #FFFFFF;
