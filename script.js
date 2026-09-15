@@ -160,9 +160,25 @@ function renderBasket() {
         basketItems.innerHTML += `
             <div class="basket_item">
 
-                <span>${basket[i].amount} x ${basket[i].name}</span>
+                <div class="item_name">
+                    
+                    <span>${basket[i].amount} x ${basket[i].name}</span>
 
-                <span>${(basket[i].price * basket[i].amount).toFixed(2)} €</span>
+                </div>
+
+                <div class="item_amount_price">
+
+                    <div class="item_amount">
+
+                        <button class="amount_button"><img src="./img/delete.png" alt="delete item"></button>
+                        <span>${basket[i].amount}</span>
+                        <button class="amount_button">+</button>
+
+                    </div>
+
+                    <span>${(basket[i].price * basket[i].amount).toFixed(2)} €</span>
+
+                </div>
 
             </div>
         `;

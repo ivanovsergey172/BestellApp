@@ -210,12 +210,61 @@ header {
 }
 
 .basket_item {
+    box-sizing: border-box;
     background-color: #FDEADC;
-    max-width: 340px;
-    min-height: 103px;
+    width: 100%;
+    min-height: 129px;
     border-radius: 20px;
     padding: 20px;
     gap: 8px;
+}
+
+.item_name {
+    width: 300px;
+    height: 52px;
+}
+
+.item_name span {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #363534;
+    line-height: 120%;
+}
+
+.item_amount_price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item_amount_price span {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #363534;
+}
+
+.item_amount {
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amount_button {
+    border: none;
+    background-color: transparent;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #363534;
+    cursor: pointer;
+}
+
+.amount_button img {
+    height: 20px;
+    transform: translateY(2px);
 }
 
 /* ----- burger headline ----- */
