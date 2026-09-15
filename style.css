@@ -182,6 +182,42 @@ header {
     color: #FDEADC;
 }
 
+.basket_added {
+    color: #E76C1F !important;
+}
+
+.basket_view {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 355px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.basket_view::-webkit-scrollbar {
+    width: 6px;
+}
+
+.basket_view::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.basket_view::-webkit-scrollbar-thumb {
+    background-color: #FDEADC;
+    border-radius: 30px;
+}
+
+.basket_item {
+    background-color: #FDEADC;
+    max-width: 340px;
+    min-height: 103px;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 8px;
+}
+
 /* ----- burger headline ----- */
 
 .burger_headline {

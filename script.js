@@ -143,6 +143,7 @@ function addToBasket(array, index, button) {
     }
 
     button.innerText = `Added ${basket.find(item => item.name == dish.name).amount}`;
+    button.classList.add("basket_added");
 
     renderBasket();
 
