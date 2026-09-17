@@ -28,7 +28,7 @@ function renderBurgers() {
                         <div class="burger_price_button">
 
                             <h2>${burgers[i].price.toFixed(2)} €</h2>
-                            <button onclick="addToBasket(burgers, ${i}, this)">Add to basket</button>
+                            <button id="burgerButton${i}" onclick="addToBasket(burgers, ${i}, this)">Add to basket</button>
 
                         </div>
                         
@@ -70,7 +70,7 @@ function renderPizza() {
                         <div class="pizza_price_button">
 
                             <h2>${pizzas[i].price.toFixed(2)} €</h2>
-                            <button onclick="addToBasket(pizzas, ${i}, this)">Add to basket</button>
+                            <button id="pizzaButton${i}" onclick="addToBasket(pizzas, ${i}, this)">Add to basket</button>
 
                         </div>
                         
@@ -112,7 +112,7 @@ function renderSalads() {
                         <div class="salad_price_button">
 
                             <h2>${salads[i].price.toFixed(2)} €</h2>
-                            <button onclick="addToBasket(salads, ${i}, this)">Add to basket</button>
+                            <button id="saladButton${i}" onclick="addToBasket(salads, ${i}, this)">Add to basket</button>
 
                         </div>
                         
@@ -138,7 +138,9 @@ function addToBasket(array, index, button) {
         basket.push({
             name: dish.name,
             price: dish.price,
-            amount: 1
+            amount: 1,
+            category: array,
+            index: index
         });
     }
 
@@ -161,18 +163,22 @@ function renderBasket() {
             <div class="basket_item">
 
                 <div class="item_name">
-                    
                     <span>${basket[i].amount} x ${basket[i].name}</span>
-
                 </div>
 
                 <div class="item_amount_price">
 
                     <div class="item_amount">
 
-                        <button class="amount_button"><img src="./img/delete.png" alt="delete item"></button>
+                        <button class="amount_button" onclick="removeFromBasket(${i})">
+                            <img src="./img/delete.png" alt="delete item">
+                        </button>
+
                         <span>${basket[i].amount}</span>
-                        <button class="amount_button">+</button>
+
+                        <button class="amount_button" onclick="increaseAmount(${i})">
+                            +
+                        </button>
 
                     </div>
 
@@ -184,4 +190,51 @@ function renderBasket() {
         `;
         
     }
+}
+
+function increaseAmount(index) {
+
+    basket[index].amount++;
+
+    updateAddButton(basket[index]);
+
+    renderBasket();
+}
+
+function removeFromBasket(index) {
+
+    let item = basket[index];
+
+    let button;
+
+    if (item.category == burgers) {
+        button = document.getElementById(`burgerButton${item.index}`);
+    } else if (item.category == pizzas) {
+        button = document.getElementById(`pizzsButton${item.index}`);
+    } else if (item.category == salads) {
+        button = document.getElementById(`saladButton${item.index}`);
+    }
+
+    button.innerText = `Add to basket`;
+    button.classList.remove("basket_added");
+
+    basket.splice(index, 1);
+
+    renderBasket();
+}
+
+function updateAddButton(item) {
+    
+    let button;
+
+    if (item.category == burgers) {
+        button = document.getElementById(`burgerButton${item.index}`);
+    } else if (item.category == pizzas) {
+        button = document.getElementById(`pizzsButton${item.index}`);
+    } else if (item.category == salads) {
+        button = document.getElementById(`saladButton${item.index}`);
+    }
+
+    button.innerText = `Added ${item.amount}`;
+    button.classList.add("basket_added");
 }
