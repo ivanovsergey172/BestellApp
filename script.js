@@ -27,7 +27,7 @@ function renderBurgers() {
                         
                         <div class="burger_price_button">
 
-                            <h2>${burgers[i].price.toFixed(2)} €</h2>
+                            <h2>${formatPrice(burgers[i].price)} €</h2>
                             <button id="burgerButton${i}" onclick="addToBasket(burgers, ${i}, this)">Add to basket</button>
 
                         </div>
@@ -69,7 +69,7 @@ function renderPizza() {
                         
                         <div class="pizza_price_button">
 
-                            <h2>${pizzas[i].price.toFixed(2)} €</h2>
+                            <h2>${formatPrice(pizzas[i].price)} €</h2>
                             <button id="pizzaButton${i}" onclick="addToBasket(pizzas, ${i}, this)">Add to basket</button>
 
                         </div>
@@ -111,7 +111,7 @@ function renderSalads() {
                         
                         <div class="salad_price_button">
 
-                            <h2>${salads[i].price.toFixed(2)} €</h2>
+                            <h2>${formatPrice(salads[i].price)} €</h2>
                             <button id="saladButton${i}" onclick="addToBasket(salads, ${i}, this)">Add to basket</button>
 
                         </div>
@@ -148,7 +148,7 @@ function addToBasket(array, index, button) {
     button.classList.add("basket_added");
 
     renderBasket();
-
+    renderCalculation();
 }
 
 let basketItems = document.getElementById("basket_items");
@@ -182,7 +182,7 @@ function renderBasket() {
 
                     </div>
 
-                    <span>${(basket[i].price * basket[i].amount).toFixed(2)} €</span>
+                    <span>${formatPrice(basket[i].price * basket[i].amount)} €</span>
 
                 </div>
 
@@ -199,6 +199,7 @@ function increaseAmount(index) {
     updateAddButton(basket[index]);
 
     renderBasket();
+    renderCalculation();
 }
 
 function removeFromBasket(index) {
@@ -210,7 +211,7 @@ function removeFromBasket(index) {
     if (item.category == burgers) {
         button = document.getElementById(`burgerButton${item.index}`);
     } else if (item.category == pizzas) {
-        button = document.getElementById(`pizzsButton${item.index}`);
+        button = document.getElementById(`pizzaButton${item.index}`);
     } else if (item.category == salads) {
         button = document.getElementById(`saladButton${item.index}`);
     }
@@ -221,6 +222,7 @@ function removeFromBasket(index) {
     basket.splice(index, 1);
 
     renderBasket();
+    renderCalculation();
 }
 
 function updateAddButton(item) {
@@ -230,11 +232,53 @@ function updateAddButton(item) {
     if (item.category == burgers) {
         button = document.getElementById(`burgerButton${item.index}`);
     } else if (item.category == pizzas) {
-        button = document.getElementById(`pizzsButton${item.index}`);
+        button = document.getElementById(`pizzaButton${item.index}`);
     } else if (item.category == salads) {
         button = document.getElementById(`saladButton${item.index}`);
     }
 
     button.innerText = `Added ${item.amount}`;
     button.classList.add("basket_added");
+}
+
+function calculateSubtotal() {
+
+    let subtotal = 0;
+
+    for (let i = 0; i < basket.length; i++) {
+        subtotal += basket[i].price * basket[i].amount; 
+    }
+
+    return subtotal;
+}
+
+let deliveryFee = 4.99;
+
+function calculateTotal() {
+
+    let subtotal = calculateSubtotal();
+
+    let total = subtotal + deliveryFee;
+
+    return total;
+}
+
+function formatPrice(price) {
+
+    return price.toFixed(2).replace(".", ",");
+}
+
+let subtotalElement = document.getElementById("subtotal");
+let totalElement = document.getElementById("total");
+let buyButton = document.getElementById("buy_button");
+
+function renderCalculation() {
+
+    let subtotal = calculateSubtotal();
+    let total = subtotal + deliveryFee;
+
+    subtotalElement.innerText = `${formatPrice(subtotal)} €`;
+    totalElement.innerText = `${formatPrice(total)} €`;
+
+    buyButton.innerText = `Buy now (${formatPrice(total)} €)`;
 }
