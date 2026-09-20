@@ -164,6 +164,8 @@ header {
 .basket_container {
     width: 340px;
     height: 676px;
+    display: flex;
+    flex-direction: column;
     margin-top: 59px;
     margin-left: 31px;
     gap: 36px;
@@ -265,6 +267,59 @@ header {
 .amount_button img {
     height: 20px;
     transform: translateY(2px);
+}
+
+.money_calculation {
+    height: 208px;
+}
+
+.calculation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculation_text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 120%;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.calculation_prices {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 120%;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+hr {
+    height: 3px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    border: none;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 120%;
+    gap: 8px;
+    margin-bottom: 36px;
 }
 
 /* ----- burger headline ----- */
