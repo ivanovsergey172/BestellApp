@@ -1,8 +1,13 @@
 
+// basket array created
+
 let basket = [];
+
+// burger section defined in JS
 
 let burgerSection = document.getElementById("burger_section");
 
+// renderBurgers() updates the burger section from db.js
 
 function renderBurgers() {
     
@@ -42,9 +47,11 @@ function renderBurgers() {
 
 renderBurgers();
 
+// pizza section defined in JS
 
 let pizzaSection = document.getElementById("pizza_section");
 
+// renderPizza() updates the pizza section from db.js
 
 function renderPizza() {
     
@@ -84,9 +91,11 @@ function renderPizza() {
 
 renderPizza();
 
+// salad section defined in JS
 
 let saladSection = document.getElementById("salad_section");
 
+// renderSalads() updates the salad section from db.js
 
 function renderSalads() {
     
@@ -126,12 +135,15 @@ function renderSalads() {
 
 renderSalads();
 
+// addToBasket() adds new items to the basket or increases the amount of existing items
+
 function addToBasket(array, index, button) {
 
     let dish = array[index];
 
     let existingDish = basket.find(item => item.name == dish.name);
 
+    // if the dish already exists, increase amount. Else add the new dish to the basket
     if (existingDish) {
         existingDish.amount++;
     } else {
@@ -144,6 +156,7 @@ function addToBasket(array, index, button) {
         });
     }
 
+    // update the "add to basket" button to "added: 1" etc.
     button.innerText = `Added ${basket.find(item => item.name == dish.name).amount}`;
     button.classList.add("basket_added");
 
@@ -151,7 +164,11 @@ function addToBasket(array, index, button) {
     renderCalculation();
 }
 
+// basket items defined in JS
+
 let basketItems = document.getElementById("basket_items");
+
+// renderBasket() updates the basket view if something changes
 
 function renderBasket() {
 
@@ -192,6 +209,8 @@ function renderBasket() {
     }
 }
 
+// increaseAmount() increases the amount of a dish, when the "+" button is pressed
+
 function increaseAmount(index) {
 
     basket[index].amount++;
@@ -201,6 +220,8 @@ function increaseAmount(index) {
     renderBasket();
     renderCalculation();
 }
+
+// removeFromBasket() removes the item from basket if the "trash" button is pressed
 
 function removeFromBasket(index) {
 
@@ -216,6 +237,7 @@ function removeFromBasket(index) {
         button = document.getElementById(`saladButton${item.index}`);
     }
 
+    // button next to the dish changes back to "add to basket"
     button.innerText = `Add to basket`;
     button.classList.remove("basket_added");
 
@@ -224,6 +246,8 @@ function removeFromBasket(index) {
     renderBasket();
     renderCalculation();
 }
+
+// update the "add to basket" button to "added: 1" etc.
 
 function updateAddButton(item) {
     
@@ -241,6 +265,8 @@ function updateAddButton(item) {
     button.classList.add("basket_added");
 }
 
+// calculates the subtotal price and returns the value
+
 function calculateSubtotal() {
 
     let subtotal = 0;
@@ -252,7 +278,11 @@ function calculateSubtotal() {
     return subtotal;
 }
 
+// delivery fee defined in JS
+
 let deliveryFee = 4.99;
+
+// calculates the total price (subtotal + delivery fee) and returns the value
 
 function calculateTotal() {
 
@@ -263,14 +293,21 @@ function calculateTotal() {
     return total;
 }
 
+// formatPrice() changes the "." to a "," in prices
+// necessary, because the page shows prices as "11,90 €" whereas the calculation uses "11.90 €" to not confuse the code
+
 function formatPrice(price) {
 
     return price.toFixed(2).replace(".", ",");
 }
 
+// subtotal, total and buy_button defined in JS
+
 let subtotalElement = document.getElementById("subtotal");
 let totalElement = document.getElementById("total");
 let buyButton = document.getElementById("buy_button");
+
+// renderCalculation() updates the prices for the subtotal amount, total amount and inside the buy now button
 
 function renderCalculation() {
 
