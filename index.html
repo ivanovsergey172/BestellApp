@@ -9,119 +9,139 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <a href="./index.html"><img src="./img/Logo_02.png" alt="header logo" class="header_logo"></a>
-        <a href=""><img src="./img/menu.png" alt="menu logo"></a>
-    </header>
+    <div class="page">
+        <header>
+            <a href="./index.html"><img src="./img/Logo_02.png" alt="header logo" class="header_logo"></a>
+            <a href=""><img src="./img/menu.png" alt="menu logo"></a>
+        </header>
 
-    <main>
-        <section class="restaurant_hero">
-            <img src="./img/hero_image.jpg" alt="hero image" class="hero_image">
-            <img src="./img/burger_logo.png" alt="burger logo" class="burger_logo">
-            <div class="name_and_tagline">
-                <div class="name_container">
-                    <h1 class="restaurant_name">Burger<span>House</span></h1>
-                    <div class="rating_container">
-                        <h5>★</h5>
-                        <div class="ratings">
-                            <h6>4,1</h6>
-                            <span>(317)</span>
-                        </div>
-                    </div>
-                </div>
-                <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
-            </div>
-        </section>
-
-        <div class="menu_area">
-
-            <div class="food_area">
-
-                <section class="burger_headline">
-                    <div class="orange_rectangle">
-                        <div class="headline_text">
-                            <img src="./img/headline_logos/burger.png" alt="burger_headline_logo">
-                            Burger & Sandwiches 
-                        </div>
-                    </div>
-                </section>
-
-                <section id="burger_section">
-
-                </section>
-
-                <section class="pizza_headline">
-                    <div class="orange_rectangle">
-                        <div class="headline_text">
-                            <img src="./img/headline_logos/pizza.png" alt="pizza_headline_logo">
-                            Pizza <span>(30cm)</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="pizza_section">
-
-                </section>
-
-                <section class="salad_headline">
-                    <div class="orange_rectangle">
-                        <div class="headline_text">
-                            <img src="./img/headline_logos/salad.png" alt="salad_headline_logo">
-                            Salad 
-                        </div>
-                    </div>
-                </section>
-
-                <section id="salad_section">
-
-                </section>
-
-            </div>
-
-            <section class="basket_section">
-                <div class="basket_container">
-                    <div class="basket_headline">
-                        <span>Your Basket</span>
-                    </div>
-                    <div class="basket_view" id="basket_items">
-
-                    </div>
-                    <div class="money_calculation">
-                        <div class="calculation">
-                            <div class="calculation_text">
-                                <span>Subtotal</span>
-                                <span>Delivery fee</span>
-                            </div>
-                            <div class="calculation_prices">
-                                <span id="subtotal">0,00 €</span>
-                                <span>4,99 €</span>
+        <main>
+            <section class="restaurant_hero">
+                <img src="./img/hero_image.jpg" alt="hero image" class="hero_image">
+                <img src="./img/burger_logo.png" alt="burger logo" class="burger_logo">
+                <div class="name_and_tagline">
+                    <div class="name_container">
+                        <h1 class="restaurant_name">Burger<span>House</span></h1>
+                        <div class="rating_container">
+                            <h5>★</h5>
+                            <div class="ratings">
+                                <h6>4,1</h6>
+                                <span>(317)</span>
                             </div>
                         </div>
-                        <hr>
-                        <div class="total">
-                            <span>Total</span>
-                            <span id="total">0,00 €</span>
-                        </div>
-                        <div class="button">
-                            <button class="buy_button" id="buy_button">Buy now (0,00 €)</button>
-                        </div>
                     </div>
+                    <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
                 </div>
             </section>
 
-        </div>
-    </main>
+            <div class="menu_area">
 
-    <footer>
-        <div class="footer_container">
-            <div class="copyright_container">
-                <img src="./img/copyright.png" alt="copyright image">
-                2025 BurgerHouse
+                <div class="food_area">
+
+                    <section class="burger_headline">
+                        <div class="orange_rectangle">
+                            <div class="headline_text">
+                                <img src="./img/headline_logos/burger.png" alt="burger_headline_logo">
+                                Burger & Sandwiches 
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="burger_section">
+
+                    </section>
+
+                    <section class="pizza_headline">
+                        <div class="orange_rectangle">
+                            <div class="headline_text">
+                                <img src="./img/headline_logos/pizza.png" alt="pizza_headline_logo">
+                                Pizza <span>(30cm)</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="pizza_section">
+
+                    </section>
+
+                    <section class="salad_headline">
+                        <div class="orange_rectangle">
+                            <div class="headline_text">
+                                <img src="./img/headline_logos/salad.png" alt="salad_headline_logo">
+                                Salad 
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="salad_section">
+
+                    </section>
+
+                </div>
+
+                <section class="basket_section" id="basket">
+                    <div class="basket_container">
+                        <div class="basket_headline">
+                            <span>Your Basket</span>
+                        </div>
+                        <div class="basket_view" id="basket_items">
+
+                        </div>
+                        <div class="money_calculation">
+                            <div class="calculation">
+                                <div class="calculation_text">
+                                    <span>Subtotal</span>
+                                    <span>Delivery fee</span>
+                                </div>
+                                <div class="calculation_prices">
+                                    <span id="subtotal">0,00 €</span>
+                                    <span>4,99 €</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="total">
+                                <span>Total</span>
+                                <span id="total">0,00 €</span>
+                            </div>
+                            <div class="button">
+                                <button class="buy_button" id="buy_button" onclick="buyOrder()">
+                                    Buy now (0,00 €)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-            <span>Imprint</span>
-            <span>Cookie preferences</span>
+        </main>
+
+        <footer>
+            <div class="footer_container">
+                <div class="copyright_container">
+                    <img src="./img/copyright.png" alt="copyright image">
+                    2025 BurgerHouse
+                </div>
+                <span>Imprint</span>
+                <span>Cookie preferences</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="popup" id="order_popup">
+        <div class="popup_content">
+            <button id="close_popup" onclick="closePopupWindow()">
+                ✕
+            </button>
+            <div class="order_confirmation">
+                <img src="./img/order_confirmed.png" alt="delivery van image">
+                <div class="confirmation_text">
+                    <h2>Order confirmed!</h2>
+                    <p>Your food is on the way!</p>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script src="./scripts/db.js"></script>
     <script src="./script.js"></script>

@@ -16,13 +16,15 @@
 
 /* ----- base html properties ----- */
 
-html {
-    max-width: 1920px;
-}
-
 body {
     border: 0;
     margin: 0;
+}
+
+.page {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 /* ----- header ----- */
@@ -136,6 +138,8 @@ header {
     font-size: 18px;
     color: #726D6D;
 }
+
+/* ----- areas ----- */
 
 .menu_area {
     display: flex;
@@ -343,6 +347,83 @@ hr {
     cursor: pointer;
 }
 
+/* ----- order confirmation popup ----- */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup_content {
+    width: 415px;
+    padding: 32px 40px;
+    background-color: #363534;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 26px;
+}
+
+.popup_content button {
+    background-color: transparent;
+    border: none;
+    color: #FDEADC;
+    cursor: pointer;
+}
+
+.order_confirmation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.order_confirmation img {
+    width: 80px;
+}
+
+.confirmation_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmation_text h2 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 120%;
+    color: #FDEADC;
+}
+
+.confirmation_text p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 120%;
+    color: #FDEADC;
+    margin-bottom: 16px;
+}
+
 /* ----- burger headline ----- */
 
 .burger_headline {
@@ -358,6 +439,7 @@ hr {
 
 .orange_rectangle {
     width: 100vw;
+    max-width: 1920px;
     height: 60px;
     background-color: #E76C1F;
     color: #FFFFFF;

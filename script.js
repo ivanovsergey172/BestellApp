@@ -319,3 +319,45 @@ function renderCalculation() {
 
     buyButton.innerText = `Buy now (${formatPrice(total)} €)`;
 }
+
+// order_popup, close_popup and basket defined in JS
+
+let orderPopup = document.getElementById("order_popup");
+let closePopup = document.getElementById("close_popup");
+let basketElement = document.getElementById("basket");
+
+// emptyBasket() clears the basket items and also renders all relevant areas so that a new order can be made
+
+function emptyBasket() {
+    basket = [];
+    
+    renderBasket();
+    renderCalculation();
+
+    renderBurgers();
+    renderPizza();
+    renderSalads();
+}
+
+// buyOrder() is the function that gets executed by the "buy now" button
+// clears and hides the basket, shows the confirmation popup and closes it automatically after 5 sec
+
+function buyOrder() {
+    emptyBasket();
+
+    basketElement.style.display = "none";
+
+    orderPopup.classList.add("show");
+
+    setTimeout(function() {
+        closePopupWindow();
+    }, 5000);
+}
+
+// closePopupWindow() gets executed either automatically after 5 seconds or by pressing the "close" button inside the popup 
+
+function closePopupWindow() {
+
+    orderPopup.classList.remove("show");
+    basketElement.style.display = "block";
+}
