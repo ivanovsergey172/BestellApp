@@ -322,6 +322,27 @@ hr {
     margin-bottom: 36px;
 }
 
+.button {
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy_button {
+    width: 320px;
+    height: 64px;
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+    color: #FBFBFB;
+    border: none;
+    border-radius: 60px;
+    background-color: #E76C1F;
+    cursor: pointer;
+}
+
 /* ----- burger headline ----- */
 
 .burger_headline {
