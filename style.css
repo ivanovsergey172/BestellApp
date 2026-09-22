@@ -33,14 +33,23 @@ header {
     height: 128px;
     background-color: #E76C1F;
     display: flex;
+    justify-content: center;
+}
+
+header div {
+    display: flex;
     align-items: center;
     justify-content: space-between;
+
+    width: 100%;
+    max-width: 1920px;
+    padding-left: 120px;
     padding-right: 42px;
+    box-sizing: border-box;
 }
 
 .header_logo {
     height: 38px;
-    padding-left: 120px;
 }
 
 /* ----- main ----- */
@@ -148,6 +157,8 @@ header {
 
 .food_area {
     width: calc(100% - 435px);
+    position: relative;
+    z-index: 1;
 }
 
 /* ----- basket ----- */
@@ -438,20 +449,32 @@ hr {
 /* ----- headline (all) ----- */
 
 .orange_rectangle {
-    width: 100vw;
-    max-width: 1920px;
+    width: 100%;
     height: 60px;
     background-color: #E76C1F;
     color: #FFFFFF;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
+}
+
+.orange_rectangle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc((1920px - 100vw) / 2);
+    width: 100vw;
+    height: 60px;
+    background-color: #E76C1F;
+    z-index: -1;
 }
 
 .headline_text {
     font-family: 'Palanquin Regular', sans-serif;
     font-weight: 700;
     font-size: 40px;
+    color: #FFFFFF;
     padding-left: 186px;
     gap: 20px;
     display: flex;
