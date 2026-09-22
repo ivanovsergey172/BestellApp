@@ -449,25 +449,33 @@ hr {
 /* ----- headline (all) ----- */
 
 .orange_rectangle {
-    width: 100%;
+    width: 100vw;
     height: 60px;
     background-color: #E76C1F;
     color: #FFFFFF;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    position: relative;
 }
 
-.orange_rectangle::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: calc((1920px - 100vw) / 2);
-    width: 100vw;
-    height: 60px;
-    background-color: #E76C1F;
-    z-index: -1;
+@media (min-width: 1921px) {
+
+    .orange_rectangle {
+        position: relative;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .orange_rectangle::before {
+        content: "";
+        position: absolute;
+        op: 0;
+        left: calc((1920px - 100vw) / 2);
+        width: 100vw;
+        height: 60px;
+        background-color: #E76C1F;
+        z-index: -1;
+    }
 }
 
 .headline_text {
