@@ -26,6 +26,12 @@ body {
     margin: 0 auto;
 }
 
+/* ----- navigation bar (mobile only) ----- */
+
+.mobile_nav {
+    display: none;
+}
+
 /* ----- header ----- */
 
 header {
@@ -838,6 +844,24 @@ footer img {
 
 @media (max-width: 375px) {
 
+    .mobile_nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 78px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+        background-color: #363534;
+    }
+
+    .mobile_nav button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
     header {
         height: 79px;
     }
@@ -1050,5 +1074,6 @@ footer img {
         align-items: center;
         gap: 2px;
         transform: translateY(10px);
+        padding-bottom: 80px;
     }
 }
