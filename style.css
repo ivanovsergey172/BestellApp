@@ -17,7 +17,6 @@
 /* ----- base html properties ----- */
 
 body {
-    border: 0;
     margin: 0;
 }
 
@@ -469,7 +468,7 @@ hr {
     .orange_rectangle::before {
         content: "";
         position: absolute;
-        op: 0;
+        top: 0;
         left: calc((1920px - 100vw) / 2);
         width: 100vw;
         height: 60px;
@@ -487,6 +486,17 @@ hr {
     gap: 20px;
     display: flex;
     align-items: center;
+}
+
+.desktop_text {
+    font-family: 'Palanquin Regular', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #FFFFFF;
+}
+
+.mobile_text {
+    display: none;
 }
 
 .headline_text img {
@@ -808,4 +818,237 @@ footer img {
     justify-content: center;
     align-items: center;
     gap: 4px;
+}
+
+@media (max-width: 768px) {
+
+    .desktop_text {
+        display: none;
+    }
+
+    .mobile_text {
+        display: inline;
+        font-family: 'Palanquin Regular', sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        color: #FFFFFF;
+        line-height: 120%;
+    }
+}
+
+@media (max-width: 375px) {
+
+    header {
+        height: 79px;
+    }
+
+    #menu_logo {
+        display: none;
+    }
+
+    header div {
+        justify-content: flex-start;
+        padding-left: 16px;
+    }
+
+    .header_logo {
+        height: 37px;
+    }
+
+    .restaurant_hero {
+        padding-top: 24px;
+        padding-block-end: 24px;
+    }
+
+    .hero_image {
+        width: 343px;
+        height: 346px;
+        border-radius: 16px;
+    }
+
+    .burger_logo {
+        height: 120px;
+        width: 120px;
+        transform: translateY(-70px);
+    }
+
+    .name_and_tagline {
+        transform: translateY(-40px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name_container {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .rating_container {
+        height: 32px;
+    }
+
+    .restaurant_name {
+        font-size: 40px;
+        line-height: 120%;
+    }
+
+    .name_and_tagline p {
+        margin-block-start: 0;
+        font-size: 22px;
+        line-height: 120%;
+        width: 353px;
+        text-align: center;
+    }
+
+    .burger_headline {
+        height: 104px;
+    }
+
+    .headline_text {
+        padding-left: 0;
+        font-size: 32px;
+        line-height: 120%;
+        flex-direction: column;
+        gap: 0;
+        transform: translateY(-36px);
+    }
+
+    .headline_text img {
+        width: 70px;
+        height: 72px;
+        transform: translateY(16px);
+    }
+
+    .headline_text span {
+        font-family: 'Palanquin Regular', sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        color: #FFFFFF;
+        line-height: 120%;
+    }
+
+    .orange_rectangle {
+        justify-content: center;
+    }
+
+    .burger {
+        width: 335px;
+        padding-left: 20px;
+    }
+
+    .burger_entry {
+        flex-direction: column;
+    }
+
+    .burger_entry img {
+        width: 315px;
+        height: 86px;
+    }
+
+    .burger_info {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .burger_name_desc {
+        width: 315px;
+        margin-bottom: 16px;
+    }
+
+    .burger_name_desc span {
+        line-height: 120%;
+    }
+
+    .burger_price_button {
+        flex-direction: row;
+        width: 315px;
+        margin-bottom: 12px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .pizza {
+        width: 335px;
+        padding-left: 20px;
+    }
+
+    .pizza_entry {
+        flex-direction: column;
+    }
+
+    .pizza_entry img {
+        width: 315px;
+        height: 86px;
+    }
+
+    .pizza_info {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .pizza_name_desc {
+        width: 315px;
+        margin-bottom: 16px;
+    }
+
+    .pizza_name_desc span {
+        line-height: 120%;
+    }
+
+    .pizza_price_button {
+        flex-direction: row;
+        width: 315px;
+        margin-bottom: 12px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .salad {
+        width: 335px;
+        padding-left: 20px;
+    }
+
+    .salad_entry {
+        flex-direction: column;
+    }
+
+    .salad_entry img {
+        width: 315px;
+        height: 86px;
+    }
+
+    .salad_info {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .salad_name_desc {
+        width: 315px;
+        margin-bottom: 16px;
+    }
+
+    .salad_name_desc span {
+        line-height: 120%;
+    }
+
+    .salad_price_button {
+        flex-direction: row;
+        width: 315px;
+        margin-bottom: 12px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .basket_section {
+        display: none;
+    }
+
+    .footer_container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2px;
+        transform: translateY(10px);
+    }
 }
