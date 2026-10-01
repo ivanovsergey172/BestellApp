@@ -842,7 +842,7 @@ footer img {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
 
     .mobile_nav {
         display: flex;
@@ -860,6 +860,12 @@ footer img {
         border: none;
         background-color: transparent;
         cursor: pointer;
+        padding: 0;
+    }
+
+    .mobile_nav img {
+        width: 32px;
+        height: 32px;
     }
 
     header {
@@ -926,6 +932,10 @@ footer img {
         text-align: center;
     }
 
+    .food_area {
+        width: 100%;
+    }
+
     .burger_headline {
         height: 104px;
     }
@@ -959,7 +969,9 @@ footer img {
 
     .burger {
         width: 335px;
-        padding-left: 20px;
+        padding-left: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .burger_entry {
@@ -995,7 +1007,9 @@ footer img {
 
     .pizza {
         width: 335px;
-        padding-left: 20px;
+        padding-left: 0px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .pizza_entry {
@@ -1031,7 +1045,9 @@ footer img {
 
     .salad {
         width: 335px;
-        padding-left: 20px;
+        padding-left: 0px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .salad_entry {
