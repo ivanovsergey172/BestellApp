@@ -339,13 +339,24 @@ function emptyBasket() {
     renderSalads();
 }
 
+// openBasket() is only working on narrower screens (mobile / tablet view) and opens the basket from the navbar
+
+function openBasket() {
+    basketElement.classList.add("show");
+}
+
+// closeBasket() hides the basket again
+
+function closeBasket() {
+    basketElement.classList.remove("show");
+}
+
 // buyOrder() is the function that gets executed by the "buy now" button
 // clears and hides the basket, shows the confirmation popup and closes it automatically after 5 sec
 
 function buyOrder() {
     emptyBasket();
-
-    basketElement.style.display = "none";
+    closeBasket();
 
     orderPopup.classList.add("show");
 
@@ -357,7 +368,5 @@ function buyOrder() {
 // closePopupWindow() gets executed either automatically after 5 seconds or by pressing the "close" button inside the popup 
 
 function closePopupWindow() {
-
     orderPopup.classList.remove("show");
-    basketElement.style.display = "block";
 }

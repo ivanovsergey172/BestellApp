@@ -23,7 +23,7 @@
             <img src="./img/mobile_nav/orders.png" alt="Orders">
         </button>
 
-        <button>
+        <button onclick="openBasket()">
             <img src="./img/mobile_nav/basket.png" alt="Basket">
         </button>
     </nav>
@@ -107,9 +107,13 @@
 
                 <section class="basket_section" id="basket">
                     <div class="basket_container">
+
+                        <button class="close_basket" onclick="closeBasket()">✕</button>
+
                         <div class="basket_headline">
                             <span>Your Basket</span>
                         </div>
+
                         <div class="basket_view" id="basket_items">
 
                         </div>
