@@ -1305,3 +1305,72 @@ footer img {
         padding-bottom: 80px;
     }
 }
+
+@media (max-width: 360px) {
+
+    .hero_image {
+        width: 90%;
+    }
+
+    .name_and_tagline {
+        width: 100%;
+    }
+
+    .name_and_tagline p {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .burger {
+        width: 90%;
+    }
+
+    .burger_entry img {
+        width: auto;
+    }
+
+    .burger_name_desc {
+        width: auto;
+    }
+
+    .burger_price_button {
+        width: auto;
+    }
+
+    .pizza {
+        width: 90%;
+    }
+
+    .pizza_entry img {
+        width: auto;
+    }
+
+    .pizza_name_desc {
+        width: auto;
+    }
+
+    .pizza_price_button {
+        width: auto;
+    }
+
+    .salad {
+        width: 90%;
+    }
+
+    .salad_entry img {
+        width: auto;
+    }
+
+    .salad_name_desc {
+        width: auto;
+    }
+
+    .salad_price_button {
+        width: auto;
+    }
+
+    .buy_button {
+        font-size: 32px;
+    }
+}
