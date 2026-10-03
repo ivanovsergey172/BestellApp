@@ -831,7 +831,45 @@ footer img {
     gap: 4px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1285px) {
+
+    .menu_area {
+        gap: 20px;
+    }
+
+    .food_area {
+        width: calc(100% - 300px);
+    }
+
+    .basket_section {
+        width: 280px;
+        margin-right: 20px;
+    }
+
+    .basket_container {
+        width: 220px;
+    }
+
+    .basket_item {
+        min-height: 150px;
+    }
+
+    .item_name {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .button {
+        width: 220px;
+    }
+
+    .buy_button {
+        font-size: 24px;
+    }
+
+    .headline_text {
+        padding-left: 32px;
+    }
 
     .desktop_text {
         display: none;
@@ -839,11 +877,111 @@ footer img {
 
     .mobile_text {
         display: inline;
-        font-family: 'Palanquin Regular', sans-serif;
-        font-weight: 700;
-        font-size: 32px;
-        color: #FFFFFF;
-        line-height: 120%;
+    }
+
+    .burger {
+        width: 100%;
+        max-width: 500px;
+        padding-left: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    .burger_entry {
+        flex-direction: column;
+    }
+
+    .burger_entry img {
+        width: auto;
+        height: 150px;
+    }
+
+    .burger_info {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .burger_name_desc {
+        width: auto;
+    }
+
+    .burger_price_button {
+        flex-direction: row;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px;
+    }
+
+    .pizza {
+        width: 100%;
+        max-width: 500px;
+        padding-left: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    .pizza_entry {
+        flex-direction: column;
+    }
+
+    .pizza_entry img {
+        width: auto;
+        height: 150px;
+    }
+
+    .pizza_info {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .pizza_name_desc {
+        width: auto;
+    }
+
+    .pizza_price_button {
+        flex-direction: row;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px;
+    }
+
+    .salad {
+        width: 100%;
+        max-width: 500px;
+        padding-left: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    .salad_entry {
+        flex-direction: column;
+    }
+
+    .salad_entry img {
+        width: auto;
+        height: 150px;
+    }
+
+    .salad_info {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .salad_name_desc {
+        width: auto;
+    }
+
+    .salad_price_button {
+        flex-direction: row;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px;
     }
 }
 
@@ -899,6 +1037,19 @@ footer img {
         width: 343px;
         height: 346px;
         border-radius: 16px;
+    }
+
+    .desktop_text {
+        display: none;
+    }
+
+    .mobile_text {
+        display: inline;
+        font-family: 'Palanquin Regular', sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        color: #FFFFFF;
+        line-height: 120%;
     }
 
     .burger_logo {
