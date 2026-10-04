@@ -88,9 +88,17 @@ function getBasketItemTemplate(item, index) {
 
                 <div class="item_amount">
 
-                    <button class="amount_button" onclick="removeFromBasket(${index})">
+                    ${item.amount == 1 ? `
+                        <button class="amount_button" onclick="removeFromBasket(${index})">
                         <img src="./img/delete.png" alt="delete item">
-                    </button>
+                        </button>
+                    ` : ""}
+
+                    ${item.amount > 1 ? `
+                        <button class="amount_button" onclick="decreaseAmount(${index})">
+                        -
+                        </button>
+                    ` : ""}
 
                     <span>${item.amount}</span>
 
@@ -150,6 +158,17 @@ function addToBasket(array, index, button) {
 
 function increaseAmount(index) {
     basket[index].amount++;
+
+    updateAddButton(basket[index]);
+
+    renderBasket();
+    renderCalculation();
+}
+
+// decreaseAmount() decreases the amount of a dish, when the "-" button is pressed
+
+function decreaseAmount(index) {
+    basket[index].amount--;
 
     updateAddButton(basket[index]);
 
