@@ -362,7 +362,7 @@ function buyOrder() {
 
     setTimeout(function() {
         closePopupWindow();
-    }, 5000);
+    }, 2000);
 }
 
 // closePopupWindow() gets executed either automatically after 5 seconds or by pressing the "close" button inside the popup 
