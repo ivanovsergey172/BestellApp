@@ -35,6 +35,10 @@ let orderPopup = document.getElementById("order_popup");
 let closePopup = document.getElementById("close_popup");
 let basketElement = document.getElementById("basket");
 
+// moneyCalculation defined in JS
+
+let moneyCalculation = document.querySelector(".money_calculation");
+
 // renderDishes() updates the burger, pizza and salad sections from db.js
 
 function renderDishes(array, section, className, arrayName) {
@@ -73,6 +77,7 @@ function renderDishes(array, section, className, arrayName) {
 renderDishes(burgers, burgerSection, "burger", "burgers");
 renderDishes(pizzas, pizzaSection, "pizza", "pizzas");
 renderDishes(salads, saladSection, "salad", "salads");
+renderBasket();
 
 // getBasketItemTemplate() is a template function for the HTML code needed inside renderBasket()
 
@@ -120,6 +125,17 @@ function getBasketItemTemplate(item, index) {
 
 function renderBasket() {
     basketItems.innerHTML = "";
+
+    if (basket.length == 0) {
+        basketItems.innerHTML = `
+            <div class="empty_basket">
+                <span>Nothing here yet.</span>
+                <span>Go ahead and choose something delicious!</span>
+                <img src="./img/empty_basket_logo.png" alt="basket logo">
+            </div>
+        `;
+        return;
+    }
 
     for (let i = 0; i < basket.length; i++) {
         basketItems.innerHTML += getBasketItemTemplate(basket[i], i);
@@ -246,6 +262,13 @@ function formatPrice(price) {
 // renderCalculation() updates the prices for the subtotal amount, total amount and inside the buy now button
 
 function renderCalculation() {
+    if (basket.length == 0) {
+        moneyCalculation.style.display = "none";
+        return;
+    }
+
+    moneyCalculation.style.display = "block";
+    
     let subtotal = calculateSubtotal();
     let total = subtotal + deliveryFee;
 
