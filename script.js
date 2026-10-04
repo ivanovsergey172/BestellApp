@@ -7,6 +7,34 @@ let basket = [];
 
 let burgerSection = document.getElementById("burger_section");
 
+// pizza section defined in JS
+
+let pizzaSection = document.getElementById("pizza_section");
+
+// salad section defined in JS
+
+let saladSection = document.getElementById("salad_section");
+
+// basket items defined in JS
+
+let basketItems = document.getElementById("basket_items");
+
+// delivery fee defined in JS
+
+let deliveryFee = 4.99;
+
+// subtotal, total and buy_button defined in JS
+
+let subtotalElement = document.getElementById("subtotal");
+let totalElement = document.getElementById("total");
+let buyButton = document.getElementById("buy_button");
+
+// order_popup, close_popup and basket defined in JS
+
+let orderPopup = document.getElementById("order_popup");
+let closePopup = document.getElementById("close_popup");
+let basketElement = document.getElementById("basket");
+
 // renderBurgers() updates the burger section from db.js
 
 function renderBurgers() {
@@ -47,10 +75,6 @@ function renderBurgers() {
 
 renderBurgers();
 
-// pizza section defined in JS
-
-let pizzaSection = document.getElementById("pizza_section");
-
 // renderPizza() updates the pizza section from db.js
 
 function renderPizza() {
@@ -90,10 +114,6 @@ function renderPizza() {
 }
 
 renderPizza();
-
-// salad section defined in JS
-
-let saladSection = document.getElementById("salad_section");
 
 // renderSalads() updates the salad section from db.js
 
@@ -138,7 +158,6 @@ renderSalads();
 // addToBasket() adds new items to the basket or increases the amount of existing items
 
 function addToBasket(array, index, button) {
-
     let dish = array[index];
 
     let existingDish = basket.find(item => item.name == dish.name);
@@ -164,14 +183,9 @@ function addToBasket(array, index, button) {
     renderCalculation();
 }
 
-// basket items defined in JS
-
-let basketItems = document.getElementById("basket_items");
-
 // renderBasket() updates the basket view if something changes
 
 function renderBasket() {
-
     basketItems.innerHTML = "";
 
     for (let i = 0; i < basket.length; i++) {
@@ -212,7 +226,6 @@ function renderBasket() {
 // increaseAmount() increases the amount of a dish, when the "+" button is pressed
 
 function increaseAmount(index) {
-
     basket[index].amount++;
 
     updateAddButton(basket[index]);
@@ -224,9 +237,7 @@ function increaseAmount(index) {
 // removeFromBasket() removes the item from basket if the "trash" button is pressed
 
 function removeFromBasket(index) {
-
     let item = basket[index];
-
     let button;
 
     if (item.category == burgers) {
@@ -250,7 +261,6 @@ function removeFromBasket(index) {
 // update the "add to basket" button to "added: 1" etc.
 
 function updateAddButton(item) {
-    
     let button;
 
     if (item.category == burgers) {
@@ -268,28 +278,19 @@ function updateAddButton(item) {
 // calculates the subtotal price and returns the value
 
 function calculateSubtotal() {
-
     let subtotal = 0;
 
     for (let i = 0; i < basket.length; i++) {
         subtotal += basket[i].price * basket[i].amount; 
     }
-
     return subtotal;
 }
-
-// delivery fee defined in JS
-
-let deliveryFee = 4.99;
 
 // calculates the total price (subtotal + delivery fee) and returns the value
 
 function calculateTotal() {
-
     let subtotal = calculateSubtotal();
-
     let total = subtotal + deliveryFee;
-
     return total;
 }
 
@@ -297,34 +298,19 @@ function calculateTotal() {
 // necessary, because the page shows prices as "11,90 €" whereas the calculation uses "11.90 €" to not confuse the code
 
 function formatPrice(price) {
-
     return price.toFixed(2).replace(".", ",");
 }
-
-// subtotal, total and buy_button defined in JS
-
-let subtotalElement = document.getElementById("subtotal");
-let totalElement = document.getElementById("total");
-let buyButton = document.getElementById("buy_button");
 
 // renderCalculation() updates the prices for the subtotal amount, total amount and inside the buy now button
 
 function renderCalculation() {
-
     let subtotal = calculateSubtotal();
     let total = subtotal + deliveryFee;
 
     subtotalElement.innerText = `${formatPrice(subtotal)} €`;
     totalElement.innerText = `${formatPrice(total)} €`;
-
     buyButton.innerText = `Buy now (${formatPrice(total)} €)`;
 }
-
-// order_popup, close_popup and basket defined in JS
-
-let orderPopup = document.getElementById("order_popup");
-let closePopup = document.getElementById("close_popup");
-let basketElement = document.getElementById("basket");
 
 // emptyBasket() clears the basket items and also renders all relevant areas so that a new order can be made
 
@@ -333,7 +319,6 @@ function emptyBasket() {
     
     renderBasket();
     renderCalculation();
-
     renderBurgers();
     renderPizza();
     renderSalads();
