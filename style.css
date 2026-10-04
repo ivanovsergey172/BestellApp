@@ -1033,6 +1033,36 @@ footer img {
         height: 32px;
     }
 
+    #basket_button {
+        position: relative;
+    }
+
+    #basket_counter {
+        position: absolute;
+        top: -4px;
+        right: -12px;
+
+        min-width: 16px;
+        height: 16px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0 4px;
+        box-sizing: border-box;
+
+        background-color: #FACAAC;
+        color: #E76C1F;
+
+        border-radius: 50%;
+
+        font-family: 'Palanquin Regular', sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 1;
+    }
+
     header {
         height: 79px;
     }

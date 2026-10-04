@@ -124,6 +124,8 @@ function getBasketItemTemplate(item, index) {
 // renderBasket() updates the basket view if something changes
 
 function renderBasket() {
+    renderBasketCounter();
+
     basketItems.innerHTML = "";
 
     if (basket.length == 0) {
@@ -139,6 +141,25 @@ function renderBasket() {
 
     for (let i = 0; i < basket.length; i++) {
         basketItems.innerHTML += getBasketItemTemplate(basket[i], i);
+    }
+}
+
+// renderBasketCounter() updates the counter in the navbar 
+
+function renderBasketCounter() {
+    let basketCounter = document.getElementById("basket_counter");
+    let amount = 0;
+
+    for (let i = 0; i < basket.length; i++) {
+        amount += basket[i].amount;
+    }
+
+    basketCounter.innerText = amount;
+
+    if (amount == 0) {
+        basketCounter.style.display = "none";
+    } else {
+        basketCounter.style.display = "flex";
     }
 }
 
