@@ -35,34 +35,31 @@ let orderPopup = document.getElementById("order_popup");
 let closePopup = document.getElementById("close_popup");
 let basketElement = document.getElementById("basket");
 
-// renderBurgers() updates the burger section from db.js
+// renderDishes() updates the burger, pizza and salad sections from db.js
 
-function renderBurgers() {
-    
-    burgerSection.innerHTML = ""; 
+function renderDishes(array, section, className, arrayName) {
+    section.innerHTML = "";
 
-    for (let i = 0; i < burgers.length; i++) {
+    for (let i = 0; i < array.length; i++) {
+        
+        section.innerHTML += `
+            <div class="${className}">
+                <div class="${className}_entry">
 
-        burgerSection.innerHTML += `
-            <div class="burger">
-                <div class="burger_entry">
+                    <img src="${array[i].image_url}" alt="${array[i].name}">
 
-                    <img src="${burgers[i].image_url}" alt="${burgers[i].name}">
+                    <div class="${className}_info">
 
-                    <div class="burger_info">
-
-                        <div class="burger_name_desc">
-
-                            <h2>${burgers[i].name}</h2>
-                            <span>${burgers[i].description}</span>
-
+                        <div class="${className}_name_desc">
+                            <h2>${array[i].name}</h2>
+                            <span>${array[i].description}</span>
                         </div>
                         
                         <div class="burger_price_button">
-
-                            <h2>${formatPrice(burgers[i].price)} €</h2>
-                            <button id="burgerButton${i}" onclick="addToBasket(burgers, ${i}, this)">Add to basket</button>
-
+                            <h2>${formatPrice(array[i].price)} €</h2>
+                            <button id="${className}Button${i}" onclick="addToBasket(${arrayName}, ${i}, this)">
+                                Add to basket
+                            </button>
                         </div>
                         
                     </div>
@@ -73,87 +70,53 @@ function renderBurgers() {
     }
 }
 
-renderBurgers();
+renderDishes(burgers, burgerSection, "burger", "burgers");
+renderDishes(pizzas, pizzaSection, "pizza", "pizzas");
+renderDishes(salads, saladSection, "salad", "salads");
 
-// renderPizza() updates the pizza section from db.js
+// getBasketItemTemplate() is a template function for the HTML code needed inside renderBasket()
 
-function renderPizza() {
-    
-    pizzaSection.innerHTML = ""; 
+function getBasketItemTemplate(item, index) {
+    return `
+        <div class="basket_item">
 
-    for (let i = 0; i < pizzas.length; i++) {
+            <div class="item_name">
+                <span>${item.amount} x ${item.name}</span>
+            </div>
 
-        pizzaSection.innerHTML += `
-            <div class="pizza">
-                <div class="pizza_entry">
+            <div class="item_amount_price">
 
-                    <img src="${pizzas[i].image_url}" alt="${pizzas[i].name}">
+                <div class="item_amount">
 
-                    <div class="pizza_info">
+                    <button class="amount_button" onclick="removeFromBasket(${index})">
+                        <img src="./img/delete.png" alt="delete item">
+                    </button>
 
-                        <div class="pizza_name_desc">
+                    <span>${item.amount}</span>
 
-                            <h2>${pizzas[i].name}</h2>
-                            <span>${pizzas[i].description}</span>
-
-                        </div>
-                        
-                        <div class="pizza_price_button">
-
-                            <h2>${formatPrice(pizzas[i].price)} €</h2>
-                            <button id="pizzaButton${i}" onclick="addToBasket(pizzas, ${i}, this)">Add to basket</button>
-
-                        </div>
-                        
-                    </div>
+                    <button class="amount_button" onclick="increaseAmount(${index})">
+                        +
+                    </button>
 
                 </div>
+
+                <span>${formatPrice(item.price * item.amount)} €</span>
+
             </div>
-        `;
-    }
+
+        </div>
+    `;
 }
 
-renderPizza();
+// renderBasket() updates the basket view if something changes
 
-// renderSalads() updates the salad section from db.js
+function renderBasket() {
+    basketItems.innerHTML = "";
 
-function renderSalads() {
-    
-    saladSection.innerHTML = ""; 
-
-    for (let i = 0; i < salads.length; i++) {
-
-        saladSection.innerHTML += `
-            <div class="salad">
-                <div class="salad_entry">
-
-                    <img src="${salads[i].image_url}" alt="${salads[i].name}">
-
-                    <div class="salad_info">
-
-                        <div class="salad_name_desc">
-
-                            <h2>${salads[i].name}</h2>
-                            <span>${salads[i].description}</span>
-
-                        </div>
-                        
-                        <div class="salad_price_button">
-
-                            <h2>${formatPrice(salads[i].price)} €</h2>
-                            <button id="saladButton${i}" onclick="addToBasket(salads, ${i}, this)">Add to basket</button>
-
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
-        `;
+    for (let i = 0; i < basket.length; i++) {
+        basketItems.innerHTML += getBasketItemTemplate(basket[i], i);
     }
 }
-
-renderSalads();
 
 // addToBasket() adds new items to the basket or increases the amount of existing items
 
@@ -181,46 +144,6 @@ function addToBasket(array, index, button) {
 
     renderBasket();
     renderCalculation();
-}
-
-// renderBasket() updates the basket view if something changes
-
-function renderBasket() {
-    basketItems.innerHTML = "";
-
-    for (let i = 0; i < basket.length; i++) {
-        
-        basketItems.innerHTML += `
-            <div class="basket_item">
-
-                <div class="item_name">
-                    <span>${basket[i].amount} x ${basket[i].name}</span>
-                </div>
-
-                <div class="item_amount_price">
-
-                    <div class="item_amount">
-
-                        <button class="amount_button" onclick="removeFromBasket(${i})">
-                            <img src="./img/delete.png" alt="delete item">
-                        </button>
-
-                        <span>${basket[i].amount}</span>
-
-                        <button class="amount_button" onclick="increaseAmount(${i})">
-                            +
-                        </button>
-
-                    </div>
-
-                    <span>${formatPrice(basket[i].price * basket[i].amount)} €</span>
-
-                </div>
-
-            </div>
-        `;
-        
-    }
 }
 
 // increaseAmount() increases the amount of a dish, when the "+" button is pressed
@@ -319,9 +242,9 @@ function emptyBasket() {
     
     renderBasket();
     renderCalculation();
-    renderBurgers();
-    renderPizza();
-    renderSalads();
+    renderDishes(burgers, burgerSection, "burger", "burgers");
+    renderDishes(pizzas, pizzaSection, "pizza", "pizzas");
+    renderDishes(salads, saladSection, "salad", "salads");
 }
 
 // openBasket() is only working on narrower screens (mobile / tablet view) and opens the basket from the navbar
