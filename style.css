@@ -246,8 +246,14 @@ header div {
 }
 
 .item_name {
-    width: 300px;
+    width: auto;
     height: 52px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item_name button {
+    transform: translateY(-10px);
 }
 
 .item_name span {

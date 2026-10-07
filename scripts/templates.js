@@ -35,6 +35,11 @@ function getBasketItemTemplate(item, index) {
 
             <div class="item_name">
                 <span>${item.amount} x ${item.name}</span>
+                ${item.amount > 1 ? `
+                    <button class="amount_button" onclick="removeFromBasket(${index})">
+                        <img src="./img/delete.png" alt="delete item">
+                    </button>
+                ` : ""}
             </div>
 
             <div class="item_amount_price">
@@ -43,13 +48,13 @@ function getBasketItemTemplate(item, index) {
 
                     ${item.amount == 1 ? `
                         <button class="amount_button" onclick="removeFromBasket(${index})">
-                        <img src="./img/delete.png" alt="delete item">
+                            <img src="./img/delete.png" alt="delete item">
                         </button>
                     ` : ""}
 
                     ${item.amount > 1 ? `
                         <button class="amount_button" onclick="decreaseAmount(${index})">
-                        -
+                            -
                         </button>
                     ` : ""}
 
